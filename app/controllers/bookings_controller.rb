@@ -12,11 +12,10 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
-    @booking = Booking.new
-  end
-
-  # GET /bookings/1/edit
-  def edit
+    @flight = Flight.find_by(id: params[:flight_id])
+    @booking = @flight.bookings.build
+    @passenger_number = params[:passengers].to_i
+    @passenger_number.times { @booking.passengers.build }
   end
 
   # POST /bookings or /bookings.json
@@ -56,15 +55,4 @@ class BookingsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_booking
-      @booking = Booking.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def booking_params
-      params.require(:booking).permit(:flight_id)
-    end
 end
