@@ -42,7 +42,9 @@
 <% if @flights && @flights.any? %>
 <br>
     <br>
-    We have some matches!
+      <%= @flights[0].departure_airport.airport_id %> to
+      <%= @flights[0].arrival_airport.airport_id %> on
+      <%= params[:date] %>
     <% end %>
 <% end %>
 
