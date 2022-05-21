@@ -27,7 +27,7 @@ flights_constructor.each do |flight_combo|
     Flight.create(
       departure_airport_id: flight_combo[0],
       arrival_airport_id: flight_combo[1],
-      flight_duration: "#{rand(1..4)} hours #{rand(0..59)} mins",
-      departure_time: rand(2.years).seconds.from_now.to_datetime)
+      flight_duration: "#{rand(1..4)} hr #{rand(0..59)} min",
+      departure_time: rand(1.years).seconds.from_now.to_datetime)
   end
 end
