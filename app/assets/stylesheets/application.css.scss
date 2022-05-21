@@ -1,0 +1,59 @@
+
+@import 'bulma';
+
+// Round images
+.image {
+	border-radius: 50%;
+	img {
+		border-radius: 50%;
+	}
+}
+
+// No margin below notification
+.notification:not(:last-child) {
+	margin-bottom: 0;
+}
+
+// Margin to the right and bottom of checkbox
+.boolean {  
+	margin-right: 10px;
+	margin-bottom: 5px;
+  }
+
+// Get rid of default simple form ".." underneath required fields' "*"
+form abbr[title] {
+    border-bottom: none !important;
+    text-decoration: none !important;
+  }
+
+// Remove rounding from flash notifications and make them smaller
+.notification {
+	border-radius: 0% !important;
+	height: 1rem;
+}
+
+// Positioning show button
+.show {
+    margin-top: -1.5rem !important;
+    margin-bottom: 1rem !important;
+    margin-left: 1rem !important;
+}
+
+// Positioning back button
+.back {
+    margin-top: -1rem !important;
+    margin-bottom: 1rem !important;
+    margin-left: 1rem !important;
+}
+
+// Positioning destroy button
+.destroy {
+    padding-left: 1rem !important;
+}
+
+// Wraps text in p, div, and span elements
+p, div, span{
+    height: auto !important;
+    white-space: unset !important;
+    word-break: break-all !important;
+  }

@@ -1,15 +1,13 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Flights</h1>
-
+<p>
+<strong>Select your desired booking, we'll try to get you as close as possible</h1>
+</strong></p>
 <div id="flights">
     <%= render 'searchform' %>
 </div>
 
-<%= params.inspect %>
-
 <% if @flights && @flights.any? %>
-<div>Flights From</div> 
+<p><strong>Flights From</strong></p>
     <% @flights.each do |flight| %>
     <div class="flights-header">
       <%= flight.departure_airport.airport_id %> to
@@ -17,4 +15,4 @@
       <%= flight.departure_time.strftime("%m/%d/%Y") %>
     </div>
     <% end %>
-    <% end %>
+<% end %>
