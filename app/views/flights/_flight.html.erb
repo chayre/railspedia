@@ -1,22 +1,9 @@
-<div id="<%= dom_id flight %>">
-  <p>
-    <strong>Departure airport:</strong>
-    <%= flight.departure_airport_id %>
-  </p>
 
-  <p>
-    <strong>Arrival airport:</strong>
-    <%= flight.arrival_airport_id %>
-  </p>
-
-  <p>
-    <strong>Departure time:</strong>
-    <%= flight.departure_time %>
-  </p>
-
-  <p>
-    <strong>Flight duration:</strong>
-    <%= flight.flight_duration %>
-  </p>
-
+<article class="media box ">
+<div class="media-content">
+  <%= flight.departure_airport.airport_id %> to
+  <%= flight.arrival_airport.airport_id %> on
+  <%= flight.departure_time.strftime("%m/%d/%Y") %>
 </div>
+</article>
+
