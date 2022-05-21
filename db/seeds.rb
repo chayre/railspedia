@@ -21,13 +21,13 @@ airports = Airport.create([
 flights_constructor = (1..14).to_a.product((1..14).to_a).reject { |combo| combo[0] == combo[1] } 
 # flights_constructor contains every airport combo ([LAX, CLT], [PHX, MCO] ...); iterate through each combo
 flights_constructor.each do |flight_combo|
-  # Make 25 to 40 random flights for each airport combo
-  rand(25..40).times do 
+  # Make 10 to 20 random flights for each airport combo
+  rand(10..20).times do 
     # Flight duration is randomized; departure time also randomized to two years from now and converted to datetime 
     Flight.create(
       departure_airport_id: flight_combo[0],
       arrival_airport_id: flight_combo[1],
-      flight_duration: '#{rand(1..4)} hours #{rand(0..59)} mins',
+      flight_duration: "#{rand(1..4)} hours #{rand(0..59)} mins",
       departure_time: rand(2.years).seconds.from_now.to_datetime)
   end
 end
