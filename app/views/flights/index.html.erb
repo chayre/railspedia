@@ -1,18 +1,27 @@
 <p style="color: green"><%= notice %></p>
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile is-centered">
+
+<div>
 <p>
-<strong>Select your desired booking, we'll try to get you as close as possible</h1>
+<strong>Select your desired booking. We'll try to get you as close as possible</h1>
 </strong></p>
-<div id="flights">
+<br>
+<div>
     <%= render 'searchform' %>
 </div>
-
 <% if @flights && @flights.any? %>
-<p><strong>Flights From</strong></p>
-    <% @flights.each do |flight| %>
-    <div class="flights-header">
-      <%= flight.departure_airport.airport_id %> to
-      <%=flight.arrival_airport.airport_id %> on
-      <%= flight.departure_time.strftime("%m/%d/%Y") %>
-    </div>
+<p>Flights from...</p>
+    <% @flights.all.each do |flight| %>
+    <%= render 'flight', flight: flight%>
     <% end %>
 <% end %>
+
+
+
+</div>
+
+</div>
+</div>
+</section>
