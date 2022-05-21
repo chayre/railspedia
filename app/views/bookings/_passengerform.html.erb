@@ -1,0 +1,24 @@
+<div class="booking-form box">
+  <%= form_for @booking do |f| %>
+    <% p = 1 %>
+    <%= f.fields_for :passengers do |information| %>
+      <div class="passenger-info">
+        <p class="passenger-name">Passenger <%= p %></p>
+        <p class="passenger-label">
+          <%= information.label :name, "Name:" %>
+          <%= information.text_field :name, :required => true %>
+        </p>
+
+        <p class="passenger-label">
+          <%= information.label :email, "Email:" %>
+          <%= information.email_field :email, :required => true %>
+        </p>
+      </div>
+
+      <% p += 1 %>
+    <% end %>
+    <%= f.hidden_field(:flight_id, :value => @flight.id) %>
+    <%= f.submit "Submit", :class => "btn", 
+                           :data => {disable_with: "Submitting..." }%>
+  <% end %>
+</div>
