@@ -6,3 +6,15 @@
     <%= render 'searchform' %>
 </div>
 
+<%= params.inspect %>
+
+<% if @flights && @flights.any? %>
+<div>Flights From</div> 
+    <% @flights.each do |flight| %>
+    <div class="flights-header">
+      <%= flight.departure_airport.airport_id %> to
+      <%=flight.arrival_airport.airport_id %> on
+      <%= flight.departure_time.strftime("%m/%d/%Y") %>
+    </div>
+    <% end %>
+    <% end %>
