@@ -1,0 +1,27 @@
+<% if @flights && @flights.any? %>
+<br><br>
+<div class="box has-text-centered">
+    <br>
+    <%= form_tag("bookings/new", method: :get) do %>
+        <div class="column has-text-left">
+            <% @flights.each do |flight| %>
+                <tr>
+                    <td><%= radio_button_tag(:flight_id, flight.id, required: "required") %></td>
+                    <td>Departure time: <%= flight.departure_time.strftime("%H:%M %Z") %>; Flight Duration:</td>
+                    <td><%= flight.flight_duration %></td>
+                    <br><br>
+                </tr>
+            <% end %>
+        </div>
+    <div>
+    <%= submit_tag "Book it!", :class => "continue-button button is-primary", :data => {disable_with: "Loading..." } %>
+    <%= hidden_field_tag(:passengers, params[:passengers]) %>
+    </div>
+    <% end %>
+<% else %>
+    <br><br>
+    <div class="box has-text-centered">
+        No flights matched for that date
+    </div>
+<% end %>
+</div>
