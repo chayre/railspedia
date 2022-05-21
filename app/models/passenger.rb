@@ -7,6 +7,7 @@
 #  email                :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
+#  booking_id           :integer
 #
 class Passenger < ApplicationRecord
   # The user belongs to a booking
