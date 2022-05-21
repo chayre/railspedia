@@ -5,14 +5,15 @@
   </p>
 
   <p>
-    <%= label_tag(:arrival_airport_id, "To:") %>
+    <%= label_tag(:arrival_airport_id, "Arrival:") %>
     <%= select_tag(:arrival_airport_id, options_for_select(@airports, params[:arrival_airport_id])) %>
   </p>
 
-  <div>
-    <%= form.label :departure_time, style: "display: block" %>
-    <%= form.datetime_field :departure_time %>
-  </div>
+  <p>
+    <%= label_tag(:date, "Departure Date:") %>
+    <%= select_tag(:date, 
+                   options_for_select(@dates, params[:date])) %>
+  </p>
 
   <div>
     <%= form.submit %>
