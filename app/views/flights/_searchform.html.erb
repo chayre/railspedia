@@ -1,22 +1,48 @@
 <%= form_tag("/", method: :get) do %>
-<div class="box">
-<span>
-  <%= label_tag(:departure_airport_id, "Departure", class:'label') %>
-  <%= select_tag(:departure_airport_id, options_for_select(@airports, params[:departure_airport_id]), class:'input airport-box') %>
-</span>
-<span>
-  <%= label_tag(:arrival_airport_id, "Arrival", class:'label') %>
-  <%= select_tag(:arrival_airport_id, options_for_select(@airports, params[:arrival_airport_id]), class:'input airport-box') %>
-</span>
-  
-
+<div class="box has-text-centered">
   <p>
-    <%= label_tag(:date, "Departure Date:", class:'label') %>
+    <strong>Search for flight</h1>
+    </strong></p>
+    <br>
+  <div class="columns is-centered">
+
+    <div class="column is-one-half">
+      <%= label_tag(:departure_airport_id, "Departure", class:'label') %>
+      <br>
+      <%= select_tag(:departure_airport_id, options_for_select(@airports, params[:departure_airport_id]), class:'input airport-box') %>
+    </div>
+
+<div class="column is-one-half">
+  <%= label_tag(:arrival_airport_id, "Arrival", class:'label') %>
+  <br>
+  <%= select_tag(:arrival_airport_id, options_for_select(@airports, params[:arrival_airport_id]), class:'input airport-box') %>
+</div>
+</div>  
+
+
+
+<div class="columns">
+  <div class="column is-one-half">
+    <%= label_tag(:date, "Date", class:'label') %>
+    <br>
     <%= select_tag(:date, 
                    options_for_select(@dates, params[:date]), class:'input airport-box-larger') %>
-  </p>
+  </div>
+  
+  <div class="column is-one-half">
+    <%= label_tag(:passengers, "Passengers", class:'label') %>
+    <br>
+    <%= select_tag(:passengers, 
+                  options_for_select([1,2,3,4], params[:passengers]), class:'input airport-box-small') %>
+  </div>
 </div>
-    <%= submit_tag "Search", :class => "btn" %>
 
+<%= submit_tag "Search", :class => "button is-primary is-rounded" %>
+
+<% if @flights && @flights.any? %>
+<br>
+    <br>
+    We have some matches!
+    <% end %>
 <% end %>
 
