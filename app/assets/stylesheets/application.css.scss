@@ -51,17 +51,50 @@ form abbr[title] {
     padding-left: 1rem !important;
 }
 
-// Wraps text in p, div, and span elements
-p, div, span{
-    height: auto !important;
-    white-space: unset !important;
-    word-break: break-all !important;
+html {
+  background-color: hsla(171, 100%, 41%, 0.274)
+}
+
+  .footer {
+    height: 2.5rem !important;
+    padding: 0.5rem !important;
+    background-color: hsl(171, 100%, 41%) !important;
+}
+
+.small {
+   font-size: .7rem !important;
+}
+  label {
+    display: inline !important;
+    width: 7rem !important;
   }
 
-  .airport-box{
+
+  .airport-box {
     width: 4rem !important;
   }
 
-  .airport-box-larger{
+  .airport-box-small {
+    width: 3rem !important;
+  }
+
+  .airport-box-larger {
     width: 7rem !important;
   }
+
+  .label {
+    width: 5rem !important;
+  }
+
+  select {
+    text-align-last: center !important;
+    //padding-right: 0.9rem !important;
+    direction: rtl !important;
+}
+
+.flex-wrapper {
+  display: flex !important;
+  min-height: 100vh !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
