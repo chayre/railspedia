@@ -18,6 +18,9 @@ class Flight < ApplicationRecord
   # The flight's departure airport belongs to the airport
   belongs_to :arrival_airport, class_name: "Airport"
 
+
+  default_scope -> { order(departure_time: :asc) }
+
   # Method to select and return all flights that match user query (submitted via params)
   def self.search(params)
     # Convert user submitted time to datetime of form month/day/year
@@ -26,7 +29,7 @@ class Flight < ApplicationRecord
     Flight.where(
       departure_airport_id: params[:departure_airport_id],
       arrival_airport_id: params[:arrival_airport_id],
-      departure_time: ((date - 15.days)..(date + 15.days))
+      departure_time: ((date)..(date + 1.day))
       )
     end
 end
