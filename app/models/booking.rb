@@ -15,5 +15,5 @@ class Booking < ApplicationRecord
   has_many :passengers
 
   # In the form, will accept attributes for a seperate model
-  accept_nested_attributes_for :passengers
+  accepts_nested_attributes_for :passengers
 end
