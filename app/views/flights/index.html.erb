@@ -4,15 +4,13 @@
     <div class="columns is-mobile is-centered">
 
 <div>
-<p>
-<strong>Select your desired booking. We'll try to get you as close as possible</h1>
-</strong></p>
-<br>
+
 <div>
     <%= render 'searchform' %>
+    <br>
 </div>
 <% if @flights && @flights.any? %>
-<p>Flights from...</p>
+<br>
     <% @flights.all.each do |flight| %>
     <%= render 'flight', flight: flight%>
     <% end %>
