@@ -2,24 +2,12 @@
 <section class="section">
   <div class="container">
     <div class="columns is-mobile is-centered">
-
-<div>
-
-<div>
-    <%= render 'searchform' %>
-    <br>
-</div>
-<% if @flights && @flights.any? %>
-<br>
-    <% @flights.all.each do |flight| %>
-    <%= render 'flight', flight: flight%>
-    <% end %>
-<% end %>
-
-
-
-</div>
-
-</div>
-</div>
+        <div>
+            <%= render 'searchform' %>
+        <br>
+        </div>
+    </div>
+  </div>
 </section>
+<%= render 'searchresults'%>
+
