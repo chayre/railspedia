@@ -13,4 +13,8 @@
 class Flight < ApplicationRecord
     # Each flight can have many bookings
     has_many :bookings
+    # The flight's departure airport belongs to the airport
+    belongs_to :departure_airport, class_name: "Airport"
+    # The flight's departure airport belongs to the airport
+    belongs_to :arrival_airport, class_name: "Airport"
 end
