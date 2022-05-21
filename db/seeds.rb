@@ -1,19 +1,19 @@
 # Seed our database with the 14 largest airports in the US
 airports = Airport.create([
-{ airport_id: IAD },
-{ airport_id: ATL },
-{ airport_id: DFW },
-{ airport_id: DEN },
-{ airport_id: ORD },
-{ airport_id: LAX },
-{ airport_id: CLT },
-{ airport_id: LAS },
-{ airport_id: PHX },
-{ airport_id: MCO },
-{ airport_id: SEA },
-{ airport_id: MIA },
-{ airport_id: IAH },
-{ airport_id: JFK }])
+{ airport_id: 'IAD' },
+{ airport_id: 'ATL' },
+{ airport_id: 'DFW' },
+{ airport_id: 'DEN' },
+{ airport_id: 'ORD' },
+{ airport_id: 'LAX' },
+{ airport_id: 'CLT' },
+{ airport_id: 'LAS' },
+{ airport_id: 'PHX' },
+{ airport_id: 'MCO' },
+{ airport_id: 'SEA' },
+{ airport_id: 'MIA' },
+{ airport_id: 'IAH' },
+{ airport_id: 'JFK' }])
 
 # We'll map the 14 airports to a number (1 - 14)
 # Product will do all the permutations, we'll convert that to an array of combos
