@@ -1,0 +1,20 @@
+<%= form_with url: '/', method: :get, local: true do |form| %>
+  <p>
+  <%= label_tag(:departure_airport_id, "Departure:") %>
+  <%= select_tag(:departure_airport_id, options_for_select(@airports, params[:departure_airport_id])) %>
+  </p>
+
+  <p>
+    <%= label_tag(:arrival_airport_id, "To:") %>
+    <%= select_tag(:arrival_airport_id, options_for_select(@airports, params[:arrival_airport_id])) %>
+  </p>
+
+  <div>
+    <%= form.label :departure_time, style: "display: block" %>
+    <%= form.datetime_field :departure_time %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

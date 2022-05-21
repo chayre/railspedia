@@ -3,12 +3,6 @@
 <h1>Flights</h1>
 
 <div id="flights">
-  <% @flights.each do |flight| %>
-    <%= render flight %>
-    <p>
-      <%= link_to "Show this flight", flight %>
-    </p>
-  <% end %>
+    <%= render 'searchform' %>
 </div>
 
-<%= link_to "New flight", new_flight_path %>
