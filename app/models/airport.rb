@@ -3,7 +3,7 @@
 # Table name: bookings
 #
 #  id                   :integer          not null, primary key
-#  airpirt_id           :string
+#  airport_id           :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
