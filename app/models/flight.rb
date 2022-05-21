@@ -26,7 +26,7 @@ class Flight < ApplicationRecord
     Flight.where(
       departure_airport_id: params[:departure_airport_id],
       arrival_airport_id: params[:arrival_airport_id],
-      departure_time: date
+      departure_time: ((date - 15.days)..(date + 15.days))
       )
     end
 end
