@@ -1,10 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<section class="section">
+  <div class="container">
+    <div class="is-mobile is-centered">
+      <div class="tag is-large is-primary is-light has-text-centered centered">You'll receive a confirmation email shortly</div><br><br>  
+      <div>
+        <%= render 'bookingconfirmation'%>
+      </div>
+    </div>
 
-<%= render @booking %>
+    <p class="control">
+      <br>
+      <%= link_to 'Made a mistake?', 'javascript:history.go(-1);', class: "button is-primary is-light" %>
+      <br>
+    </p>
 
-<div>
-  <%= link_to "Edit this booking", edit_booking_path(@booking) %> |
-  <%= link_to "Back to bookings", bookings_path %>
-
-  <%= button_to "Destroy this booking", @booking, method: :delete %>
-</div>
+  </div>
+</section>
