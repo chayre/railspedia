@@ -1,109 +1,17 @@
-
-  <section class="section">
-    <div class="container">
-      <div class="columns is-mobile is-centered">
-          <div>
+<section class="section">
+   <div class="container">
+      <div class="is-mobile is-centered has-text-centered">
+        <div class="tag is-large is-primary is-light has-text-centered centered is-rounded">Enter your info below to book this flight</div><br><br>  
+        <div>
             <%= render 'selectedflight'%>
-          <br>
-          </div>
-      </div>
-      <br><br><br><%= render 'passengerform'%>
-      <p class="control">
-        <br><%= link_to 'Back to search', root_path, class: "button is-primary is-light" %><br>
-      </p>
-    </div>
-  </section>
-
-  <div class="booking-form box">
-    <%= form_for @booking do |f| %>
-      <% p = 1 %>
-      <%= f.fields_for :passengers do |information| %>
-        <div class="passenger-info">
-          <p class="passenger-name text-is-centered">Passenger <%= p %></p>
-          <p class="passenger-label">
-            <%= information.label :name, "Name:" %>
-            <%= information.text_field :name, :required => true %>
-          </p>
-  
-          <p class="passenger-label">
-            <%= information.label :email, "Email:" %>
-            <%= information.email_field :email, :required => true %>
-          </p>
         </div>
-  
-        <% p += 1 %>
-      <% end %>
-      <%= f.hidden_field(:flight_id, :value => @flight.id) %>
-      <%= f.submit "Submit", :class => "btn", 
-                             :data => {disable_with: "Submitting..." }%>
-    <% end %>
-  </div>
-  
-  <div class="back-btn">
-    <%= link_to "Back", 'javascript:history.go(-1);', :class => "btn" %>
-  </div>
-
-  <p class="control">
-    <br><%= link_to 'Back to search', root_path, class: "button is-primary is-light" %><br>
-  </p>
-
-
-
-
-
-
-  <div class="columns is-centered">
-    <div class="column is-one-half">
+  </div><%= render 'passengerform'%>
       
-         </div>
+      
+      
+      <p class="control">
+        <%= link_to 'Back to search', 'javascript:history.go(-1);', class: "button is-primary is-light" %><br>
+      </p>
 
-    <div class="column is-one-half">
-    </div>
-  </div>  
-
-
-
-<div class="columns">
-  <div class="column is-one-half">
-   
   </div>
-  
-  <div class="column is-one-half">
-    </div>
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%= render "form", booking: @booking %>
-
-<br>
-
-<div>
-  <%= link_to "Back to bookings", bookings_path %>
-</div>
+</section>
