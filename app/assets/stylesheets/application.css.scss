@@ -1,24 +1,10 @@
 
 @import 'bulma';
 
-// Round images
-.image {
-	border-radius: 50%;
-	img {
-		border-radius: 50%;
-	}
-}
-
 // No margin below notification
 .notification:not(:last-child) {
 	margin-bottom: 0;
 }
-
-// Margin to the right and bottom of checkbox
-.boolean {  
-	margin-right: 10px;
-	margin-bottom: 5px;
-  }
 
 // Get rid of default simple form ".." underneath required fields' "*"
 form abbr[title] {
@@ -32,66 +18,54 @@ form abbr[title] {
 	height: 1rem;
 }
 
-// Positioning show button
-.show {
-    margin-top: -1.5rem !important;
-    margin-bottom: 1rem !important;
-    margin-left: 1rem !important;
-}
 
-// Positioning back button
-.back {
-    margin-top: -1rem !important;
-    margin-bottom: 1rem !important;
-    margin-left: 1rem !important;
-}
-
-// Positioning destroy button
-.destroy {
-    padding-left: 1rem !important;
-}
-
+// Background color
 html {
   background-color: hsla(171, 100%, 41%, 0.39)
 }
 
-  .footer {
+// Footer styling
+.footer {
     height: 2.5rem !important;
     padding: 0.5rem !important;
     background-color: hsl(171, 100%, 41%) !important;
 }
 
+// Text size definition
 .small {
    font-size: .7rem !important;
 }
-  label {
+
+//Label width
+label {
     display: inline !important;
     width: 7rem !important;
   }
 
-
-  .airport-box {
+// Changing input box widths
+.airport-box {
     width: 4rem !important;
   }
 
-  .airport-box-small {
+.airport-box-small {
     width: 3rem !important;
   }
 
-  .airport-box-larger {
+.airport-box-larger {
     width: 7rem !important;
   }
 
-  .label {
+.label {
     width: 5rem !important;
   }
 
-  select {
+  //Changing text alignment for input boxes
+select {
     text-align-last: center !important;
-    //padding-right: 0.9rem !important;
     direction: rtl !important;
 }
 
+// Flex wrapper to make footer stay at bottom
 .flex-wrapper {
   display: flex !important;
   min-height: 100vh !important;
