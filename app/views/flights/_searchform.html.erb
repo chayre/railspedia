@@ -5,21 +5,18 @@
     </strong></p>
     <br>
   <div class="columns is-centered">
-
     <div class="column is-one-half">
       <%= label_tag(:departure_airport_id, "Departure", class:'label') %>
       <br>
       <%= select_tag(:departure_airport_id, options_for_select(@airports, params[:departure_airport_id]), class:'input airport-box') %>
     </div>
 
-<div class="column is-one-half">
-  <%= label_tag(:arrival_airport_id, "Arrival", class:'label') %>
-  <br>
-  <%= select_tag(:arrival_airport_id, options_for_select(@airports, params[:arrival_airport_id]), class:'input airport-box') %>
-</div>
-</div>  
-
-
+    <div class="column is-one-half">
+      <%= label_tag(:arrival_airport_id, "Arrival", class:'label') %>
+      <br>
+      <%= select_tag(:arrival_airport_id, options_for_select(@airports, params[:arrival_airport_id]), class:'input airport-box') %>
+    </div>
+  </div>  
 
 <div class="columns">
   <div class="column is-one-half">
@@ -37,14 +34,13 @@
   </div>
 </div>
 
-<%= submit_tag "Search", :class => "button is-primary is-rounded" %>
+<%= submit_tag "Search", :class => "button is-primary" %>
 
 <% if @flights && @flights.any? %>
-<br>
-    <br>
-      <%= @flights[0].departure_airport.airport_id %> to
-      <%= @flights[0].arrival_airport.airport_id %> on
-      <%= params[:date] %>
-    <% end %>
+  <br><br>
+  <%= @flights[0].departure_airport.airport_id %> to
+  <%= @flights[0].arrival_airport.airport_id %> on
+  <%= params[:date] %>
+  <% end %>
 <% end %>
 
