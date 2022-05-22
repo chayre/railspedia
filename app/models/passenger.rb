@@ -17,5 +17,5 @@ class Passenger < ApplicationRecord
   # Name must be present, must be less than 20 characters
   # Email must be present, must confirm to email format, must be less than 20 characters
   validates :name, presence: true, length: { maximum: 20 }
-  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, length: { maximum: 20 }
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, length: { maximum: 50 }
 end
