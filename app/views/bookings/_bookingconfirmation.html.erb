@@ -1,0 +1,43 @@
+<div class="box has-text-centered">
+  <div class="columns is-centered">
+    <div class="column">
+      <% if @passenger.length == 1 %>
+      <strong><%= @passenger[0].name %></strong>
+      <% elsif @passenger.length == 2 %>
+        <strong><%= @passenger[0].name %></strong>
+        and
+        <strong><%= @passenger[1].name %></strong>
+      <% else %>
+        <% count = 0 %> 
+        <% until ((count + 1) >= @passenger.length) do %>
+          <strong><%= @passenger[count].name %></strong>,
+          <% count += 1 %>
+        <% end %>
+        and 
+        <strong><%= @passenger[count].name %></strong>
+      <% end %>
+      <br>
+      <% if @passenger.length == 1 %>
+        is
+      <% else %>
+        are
+      <% end %>
+      booked to go from
+      <br>
+      <strong><%= @flight.departure_airport.airport_id %></strong> 
+      to
+      <strong><%= @flight.arrival_airport.airport_id %></strong> 
+      on 
+      <strong><%= @flight.departure_time.strftime("%m/%d/%Y") %></strong>
+      <br>
+      Your flight leaves at 
+      <strong><%= @flight.departure_time.strftime("%H:%M %Z") %></strong>
+      <br>
+      <br>
+    <span class="tag is-large is-primary ">Happy flying!</span>
+    <br>
+    </span>
+    </div>
+  </div>
+</div>  
+
