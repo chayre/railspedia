@@ -17,6 +17,10 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
+  # Letter opener gem delivery method
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
