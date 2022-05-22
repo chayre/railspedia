@@ -19,7 +19,8 @@ class BookingsController < ApplicationController
     # This if/else calls .save; if successful, it will redirect to the show page and flash a notice. Otherwise it redirects to new page again and flashes alert.
     if @booking.save
       flash[:notice] = "Booking submitted!"
-      UserMailer.thank_you_email(@booking.passengers.first).deliver_now!
+      # Commented out emailing
+      # UserMailer.thank_you_email(@booking.passengers.first).deliver_now!
       redirect_to @booking
     else
       flash[:alert] = "Submission error"
