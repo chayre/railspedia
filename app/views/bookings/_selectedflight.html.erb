@@ -1,32 +1,24 @@
-
-
-
 <div class="box has-text-centered">
   <p>
-    <strong>Selected flight</h1>
-    </strong></p>
-    <br>
+    <strong>Selected flight</strong>
+  </p>
+  <br>
+
   <div class="columns is-centered">
-
     <div class="column">
-  <strong><%= @flight.departure_airport.airport_id %></strong> to
-  <strong><%= @flight.arrival_airport.airport_id %></strong> for 
-
-  <strong><%= @passenger_number %> </strong>
-  <% if @passenger_number > 1 %>
-  passengers
-  <% else %>
-  passenger
-  <% end %>
-  <br>
-  Departing <strong><%= @flight.departure_time.strftime("%m/%d/%Y") %></strong> at
-  <strong><%= @flight.departure_time.strftime("%H:%M %Z") %></strong><br>
-  <br>
-  <span class="tag is-large is-primary is-rounded">Enter your info below and we'll book it for you!</span><br>
+      <strong><%= @flight.departure_airport.airport_id %></strong> to
+      <strong><%= @flight.arrival_airport.airport_id %></strong> for 
+      <strong><%= @passenger_number %> </strong>
+      <% if @passenger_number > 1 %>
+        passengers
+      <% else %>
+        passenger
+      <% end %>
+      <br>
+      Departing <strong><%= @flight.departure_time.strftime("%m/%d/%Y") %></strong> at
+      <strong><%= @flight.departure_time.strftime("%H:%M %Z") %></strong>
+      <br>
+    </div>
+  </div>
 </div>
-
-  
-</div>
-</div>
-</div>  
-  
+<br>
